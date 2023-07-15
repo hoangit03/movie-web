@@ -1,0 +1,31 @@
+{
+  "name": "movie-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoangit03/movie-web.git"
+  },
+  "keywords": [
+    "movie",
+    "web-movie",
+    "movie-web"
+  ],
+  "author": "Hoang Khoa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoangit03/movie-web/issues"
+  },
+  "homepage": "https://github.com/hoangit03/movie-web#readme",
+  "dependencies": {
+    "date-fns": "^2.30.0",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
