@@ -1,11 +1,33 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { publicRoutes } from '~/routes';
+import { DefaultLayout } from './components/Layout';
+
 function App() {
     return (
-        <div className="App">
-            Lorem ipsum dolor sit amet, consecetur adipiscing elseddo eiusmod
-            tempor.There are many variations of passages of lorem Ipsum
-            available, but the majority have suffered alteration in some
-            injected humour.
-        </div>
+        <BrowserRouter>
+            <div className="App">
+                <Routes>
+                    {publicRoutes.map((publicRoute, index) => {
+                        const Page = publicRoute.component;
+                        const Layout = publicRoute.layout || DefaultLayout;
+                        return (
+                            <Route
+                                key={index}
+                                path={publicRoute.path}
+                                element={
+                                    <Layout
+                                        name={publicRoute.name}
+                                        path={publicRoute.path}
+                                    >
+                                        <Page />
+                                    </Layout>
+                                }
+                            ></Route>
+                        );
+                    })}
+                </Routes>
+            </div>
+        </BrowserRouter>
     );
 }
 
