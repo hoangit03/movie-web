@@ -1,0 +1,14 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+    --primary: #e2d848;
+}
+
+html {
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    text-rendering: optimizeSpeed;
+}
