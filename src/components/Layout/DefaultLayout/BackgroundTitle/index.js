@@ -1,27 +1,29 @@
 import { Link } from 'react-router-dom';
+import classNames from 'classnames/bind';
+import styles from './BackgroundTitle.module.scss';
+
+const cx = classNames.bind(styles);
 
 function BackgroundTitle({ name }) {
     return (
-        <div
-            style={{
-                backgroundImage:
-                    'url(https://themehut.co/wp/movflx/wp-content/uploads/2022/08/breadcrumb_bg.jpg)',
-                backgroundColor: 'rgb(89, 89, 89)',
-                height: 620,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-            }}
-            className="background position-relative"
-        >
-            <div className="content position-absolute translate-middle top-50 start-50 text-center">
-                <h1 className=" text-white text-capitalize">{name}</h1>
+        <div style={{}} className={`${cx('wrapper')} position-relative`}>
+            <div
+                className={`${cx(
+                    'content',
+                )} position-absolute translate-middle top-50 start-50 text-center f-family`}
+            >
+                <h1 className=" text-white text-capitalize fw-bold-700">
+                    {name}
+                </h1>
                 <Link
-                    to="./"
-                    className="text-uppercase text-decoration-none me-4"
+                    to="/"
+                    className="text-uppercase text-decoration-none me-4 fw-bold-700"
                 >
                     home
                 </Link>
-                <span className=" text-uppercase text-white">{name}</span>
+                <span className=" text-uppercase text-white fw-bold-700">
+                    {name}
+                </span>
             </div>
         </div>
     );

@@ -5,7 +5,7 @@ import TVSHow from '~/pages/TVShow';
 
 // Public routes
 const publicRoutes = [
-    { path: '/movie', component: Movie, name: 'our movie' },
+    { path: '/movie', component: Movie, name: 'our movies' },
     { path: '/', component: Home, name: '', layout: HeaderAndFooterOnly },
     { path: '/tv-show', component: TVSHow, name: 'Tv shows' },
 ];
