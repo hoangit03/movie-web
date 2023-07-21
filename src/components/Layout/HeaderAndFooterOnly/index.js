@@ -3,9 +3,9 @@ const { default: Header } = require('../components/Header');
 
 function HeaderAndFooterOnly({ children }) {
     return (
-        <div>
+        <div className=" container">
             <Header />
-            <div className="container">
+            <div className="">
                 <div className="content">{children}</div>
             </div>
             <Footer />

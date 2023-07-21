@@ -4,10 +4,10 @@ import BackgroundTitle from './BackgroundTitle';
 
 function DefaultLayout({ name, path, children }) {
     return (
-        <div>
+        <div className="">
             <Header />
+            <BackgroundTitle name={name} path={path} />
             <div className="container">
-                <BackgroundTitle name={name} path={path} />
                 <div className="content">{children}</div>
             </div>
             <Footer />
