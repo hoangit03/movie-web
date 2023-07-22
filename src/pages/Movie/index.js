@@ -69,7 +69,7 @@ function Movie() {
             pages.push(
                 <span
                     key={0}
-                    style={{ width: 35, height: 35 }}
+                    style={{ width: 35, height: 35, cursor: 'pointer' }}
                     className={`rounded border--no-color d-flex justify-content-center align-items-center border--color--primary lh-1 text-white f-family ms-2 me-2`}
                     onClick={() => handleSetPage(page - 1)}
                 >
@@ -82,7 +82,7 @@ function Movie() {
             pages.push(
                 <span
                     key={i}
-                    style={{ width: 35, height: 35 }}
+                    style={{ width: 35, height: 35, cursor: 'pointer' }}
                     className={`${
                         i === page ? 'bg--primary' : 'text-white'
                     } rounded border--no-color d-flex justify-content-center align-items-center border--color--primary lh-1 f-family ms-2 me-2`}
@@ -97,7 +97,7 @@ function Movie() {
             pages.push(
                 <span
                     key={page + 10}
-                    style={{ width: 35, height: 35 }}
+                    style={{ width: 35, height: 35, cursor: 'pointer' }}
                     className={`rounded border--no-color d-flex justify-content-center align-items-center border--color--primary lh-1 text-white f-family ms-2 me-2`}
                     onClick={() => handleSetPage(page + 1)}
                 >
@@ -120,7 +120,7 @@ function Movie() {
                 setMovies(data.results);
                 setTimeout(() => {
                     setLoading(false);
-                }, 1000);
+                }, 1500);
             });
     }, [page]);
 
@@ -134,7 +134,7 @@ function Movie() {
                 setMovies(data.results);
                 setTimeout(() => {
                     setLoading(false);
-                }, 1000);
+                }, 1500);
             });
     }, []);
 
@@ -158,7 +158,7 @@ function Movie() {
                 setMovies(data.results);
                 setTimeout(() => {
                     setLoading(false);
-                }, 1000);
+                }, 1500);
             });
     }, [cate]);
 

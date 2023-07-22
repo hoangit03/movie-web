@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 
 const cx = classNames.bind(styles);
 
-function MovieItem({ data }) {
+function MovieItem({ data, type = 'movie' }) {
     const [runTime, setRunTime] = useState('');
 
     function convert(number) {
@@ -66,10 +66,10 @@ function MovieItem({ data }) {
 
     useEffect(() => {
         fetch(
-            `https://api.themoviedb.org/3/movie/${data.id}?api_key=e9e9d8da18ae29fc430845952232787c&append_to_response=videos`,
+            `https://api.themoviedb.org/3/${type}/${data.id}?api_key=e9e9d8da18ae29fc430845952232787c&append_to_response=videos`,
         )
             .then((res) => res.json())
-            .then((data) => setRunTime(data.runtime));
+            .then((data) => data.runtime && setRunTime(data.runtime));
     }, []);
 
     return (
@@ -81,7 +81,11 @@ function MovieItem({ data }) {
                     >
                         <img
                             className="w-100 h-100"
-                            src={`https://image.tmdb.org/t/p/original${data.poster_path}`}
+                            src={`${
+                                data.poster_path
+                                    ? `https://image.tmdb.org/t/p/original${data.poster_path}`
+                                    : 'https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg'
+                            }`}
                             alt=""
                         />
                         <div
@@ -123,10 +127,12 @@ function MovieItem({ data }) {
                             <Link
                                 className={` movie--name text-white text-capitalize text-decoration-none f-family`}
                             >
-                                {data.title}
+                                {data.title || data.name}
                             </Link>
                             <span className="text--primary f-family">
-                                {formatDate(data.release_date)}
+                                {formatDate(
+                                    data.release_date || data.first_air_date,
+                                )}
                             </span>
                         </div>
                         <div className="d-flex align-items-center justify-content-between">
