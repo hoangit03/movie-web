@@ -48,7 +48,7 @@ const cx = classNames.bind(styles);
 
 function Movie() {
     const [movies, setMovies] = useState([]);
-    const [cate, setCate] = useState();
+    const [cate, setCate] = useState('');
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
     const [totalPage, setTotalPage] = useState(0);
@@ -143,7 +143,9 @@ function Movie() {
             `https://api.themoviedb.org/3/genre/movie/list?api_key=e9e9d8da18ae29fc430845952232787c&language=en-US`,
         )
             .then((res) => res.json())
-            .then((data) => setCategories(data.genres));
+            .then((data) =>
+                setCategories([{ id: '', name: 'All items' }, ...data.genres]),
+            );
     }, []);
 
     useEffect(() => {
@@ -189,9 +191,9 @@ function Movie() {
                             <ul
                                 className={`p-0 m-0 list-unstyled d-flex flex-wrap`}
                             >
-                                {categories.map((category) => (
+                                {categories.map((category, index) => (
                                     <li
-                                        key={category.id}
+                                        key={index}
                                         className={`${
                                             cate === category.id
                                                 ? 'border--color--primary'

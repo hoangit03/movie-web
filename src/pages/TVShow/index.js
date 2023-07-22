@@ -13,7 +13,7 @@ const cx = classNames.bind(styles);
 
 function TVSHow() {
     const [movies, setMovies] = useState([]);
-    const [cate, setCate] = useState();
+    const [cate, setCate] = useState('');
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
     const [totalPage, setTotalPage] = useState(0);
@@ -108,7 +108,9 @@ function TVSHow() {
             `https://api.themoviedb.org/3/genre/tv/list?api_key=e9e9d8da18ae29fc430845952232787c&language=en-US`,
         )
             .then((res) => res.json())
-            .then((data) => setCategories(data.genres));
+            .then((data) =>
+                setCategories([{ id: '', name: 'All items' }, ...data.genres]),
+            );
     }, []);
 
     useEffect(() => {
