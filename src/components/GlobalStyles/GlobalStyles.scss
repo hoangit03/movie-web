@@ -2,8 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap');
 
 :root {
-    --primary: #e2d848;
+    --primary: #e4d804;
     --dark: #13151d;
+    --black: #000;
 }
 
 * {
@@ -23,10 +24,36 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.bg--primary {
+    background: var(--primary);
+    color: var(--black) !important;
+}
+
 .border--primary {
     border: 3px solid var(--primary);
 }
 
+.border--no-color {
+    border: 3px solid transparent;
+    transition: 0.3s;
+}
+
+.border--color--primary {
+    border-color: var(--primary);
+}
+
 .bg--dark {
     background: var(--dark);
+}
+
+.text--primary {
+    color: var(--primary);
+}
+
+.bg--hover {
+    transition: 0.3s;
+    &:hover {
+        background-color: var(--primary);
+        color: var(--black) !important;
+    }
 }

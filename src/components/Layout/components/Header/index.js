@@ -122,7 +122,7 @@ function Header() {
                                 <button
                                     className={`${cx(
                                         'btn--login',
-                                    )} rounded-pill text-uppercase border--primary f-family bg--dark text-white fw-bold-700`}
+                                    )}  bg--hover rounded-pill text-uppercase border--primary f-family bg--dark text-white fw-bold-700`}
                                 >
                                     Sign in
                                 </button>

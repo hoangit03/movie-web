@@ -1,0 +1,42 @@
+.wrapper {
+    z-index: 9999;
+    animation: fadeOut ease-in-out 1s forwards;
+}
+
+.container {
+    background-color: #181d22;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

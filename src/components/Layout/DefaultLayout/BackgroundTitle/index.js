@@ -6,7 +6,7 @@ const cx = classNames.bind(styles);
 
 function BackgroundTitle({ name }) {
     return (
-        <div style={{}} className={`${cx('wrapper')} position-relative`}>
+        <div className={`${cx('wrapper')} position-relative`}>
             <div
                 className={`${cx(
                     'content',

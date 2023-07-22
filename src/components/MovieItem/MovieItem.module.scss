@@ -1,0 +1,64 @@
+.resolution {
+    font-size: 12px;
+    border: 2px solid #363636;
+}
+
+.movie--desc {
+    font-size: 14px;
+
+    span {
+        color: #bcbcbc;
+    }
+}
+
+.movie {
+    &:hover {
+        .appear,
+        .slip-up,
+        .slip-down {
+            transform: translateY(0px);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .movie__container--action {
+            background: rgba(0, 0, 0, 0.6);
+            transition: 0.7s;
+        }
+    }
+}
+
+.movie--action {
+    .appear {
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s;
+    }
+
+    .slip-down {
+        transform: translateY(-30px);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s;
+    }
+
+    .slip-up {
+        transform: translateY(30px);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s;
+    }
+
+    li svg {
+        font-size: 12px;
+        padding-left: 1px;
+        padding-right: 1px;
+    }
+
+    li a {
+        width: 142px;
+        height: 42px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+}
