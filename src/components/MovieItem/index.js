@@ -149,13 +149,18 @@ function MovieItem({ data, type = 'movie' }) {
                                         'movie--desc',
                                     )} f-family me-3`}
                                 >
-                                    <FontAwesomeIcon
-                                        icon={faClock}
-                                        className="me-2 text--primary"
-                                    />
-                                    <span>
-                                        {runTime > 0 && formatTime(runTime)}
-                                    </span>
+                                    {runTime && (
+                                        <>
+                                            <FontAwesomeIcon
+                                                icon={faClock}
+                                                className="me-2 text--primary"
+                                            />
+                                            <span>
+                                                {runTime > 0 &&
+                                                    formatTime(runTime)}
+                                            </span>
+                                        </>
+                                    )}
                                 </div>
                                 <div
                                     className={`${cx('movie--desc')} f-family`}
