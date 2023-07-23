@@ -1,0 +1,58 @@
+.wrapper {
+    padding: 120px 0;
+}
+
+.title__container {
+    position: relative;
+    padding-bottom: 32px;
+    margin-bottom: 74px;
+
+    p {
+        font-size: 14px;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: url('https://themehut.co/wp/movflx/wp-content/themes/movflx/assets/img/images/title_shape.png')
+            no-repeat center;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 10px;
+        width: 100px;
+        bottom: 0px;
+    }
+}
+
+.items {
+    background-color: #1f1e24;
+    padding: 50px 40px;
+    margin-bottom: 30px;
+
+    &:hover {
+        border-color: var(--primary);
+    }
+
+    span,
+    .name {
+        font-size: 12px;
+    }
+
+    .price {
+        font-size: 28px;
+    }
+
+    .time {
+        font-size: 14px;
+    }
+
+    .buy {
+        font-size: 13px;
+        padding: 15px 32px;
+    }
+}
+
+.border--bottom {
+    border-bottom: 1px solid #414146;
+}
