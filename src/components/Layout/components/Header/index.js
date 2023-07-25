@@ -83,14 +83,6 @@ function Header() {
                                 <li className="me-5">
                                     <Link
                                         className=" text-decoration-none text-white text-uppercase fw-bold-700 f-family"
-                                        to="/movie"
-                                    >
-                                        movie
-                                    </Link>
-                                </li>
-                                <li className="me-5">
-                                    <Link
-                                        className=" text-decoration-none text-white text-uppercase fw-bold-700 f-family"
                                         to="/contact"
                                     >
                                         contact
