@@ -399,7 +399,7 @@ function Home() {
                         </div>
                         <div className={`row`}>
                             {tvs.map((tv, index) => (
-                                <MovieItem key={index} data={tv} />
+                                <MovieItem key={index} data={tv} type="tv" />
                             ))}
                         </div>
                         <button

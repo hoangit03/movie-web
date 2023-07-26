@@ -1,0 +1,60 @@
+.footer-bg {
+    background: url('https://themehut.co/wp/movflx/wp-content/uploads/2022/08/footer_bg.jpg')
+        no-repeat center/cover;
+    padding: 120px;
+}
+
+.text--footer {
+    color: #cbccd0;
+}
+
+.items {
+    .icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .facebook {
+        background-color: #3b5998;
+    }
+
+    .twitter {
+        background-color: #6baae8;
+    }
+
+    .pinterestP {
+        background-color: #c53528;
+    }
+
+    .linkedinIn {
+        background-color: #3063ba;
+    }
+
+    .contact {
+        background-color: #13151d;
+        padding: 12px 16px;
+        border-radius: 999999px;
+        input {
+            outline: none;
+            flex: 1;
+            margin-right: 15px;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            background-color: #191c28;
+            color: var(--primary);
+            border: none;
+        }
+    }
+}
+
+.copy-right-bg {
+    background: #171b22;
+    padding: 25px 0;
+
+    p {
+        font-size: 14px;
+    }
+}

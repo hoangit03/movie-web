@@ -69,7 +69,11 @@ function MovieItem({ data, type = 'movie' }) {
             `https://api.themoviedb.org/3/${type}/${data.id}?api_key=e9e9d8da18ae29fc430845952232787c&append_to_response=videos`,
         )
             .then((res) => res.json())
-            .then((data) => data.runtime && setRunTime(data.runtime));
+            .then((data) => {
+                if (data.runtime) {
+                    return setRunTime(data.runtime);
+                }
+            });
     }, []);
 
     return (

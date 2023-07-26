@@ -166,7 +166,7 @@ function Movie() {
 
     return (
         <>
-            <div className={`${cx('wrapper')} pt-5`}>
+            <div className={`${cx('wrapper')} pt-5 pb-5`}>
                 <div className={`mt-3`}>
                     <div
                         className={` justify-content-between align-items-start pb-5 row`}
