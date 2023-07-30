@@ -51,7 +51,9 @@ function CommentItem({ data }) {
                             <div className={` rounded me-3`}>
                                 <FontAwesomeIcon icon={faStar} />
                                 <span className={`ms-2`}>
-                                    {data.author_details.rating + '.0'}
+                                    {data.author_details.rating
+                                        ? data.author_details.rating + '.0'
+                                        : 0}
                                 </span>
                             </div>
                             <p className={`m-0 ${cx('text--account')}`}>
