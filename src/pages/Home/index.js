@@ -24,7 +24,7 @@ function Home() {
 
     useEffect(() => {
         fetch(
-            `https://api.themoviedb.org/3/discover/movie?api_key=d1726c3024603cccff7d39494637902d`,
+            `https://api.themoviedb.org/3/movie/upcoming?api_key=e9e9d8da18ae29fc430845952232787c&language=en-US&page=1`,
         )
             .then((res) => res.json())
             .then((data) => {

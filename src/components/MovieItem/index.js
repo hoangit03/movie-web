@@ -11,7 +11,6 @@ const cx = classNames.bind(styles);
 
 function MovieItem({ data, type = 'movie' }) {
     const [runTime, setRunTime] = useState('');
-
     function convert(number) {
         return Math.round((number * 5) / 10);
     }
@@ -117,6 +116,7 @@ function MovieItem({ data, type = 'movie' }) {
                                     </li>
                                     <li className={`${cx('slip-up')}`}>
                                         <Link
+                                            to={`/${type}/${data.id}`}
                                             className={` bg--hover d-inline-block mt-3 rounded-pill border--primary f-family bg--dark text--primary text-decoration-none d-flex align-items-center justify-content-center`}
                                         >
                                             Details
@@ -129,6 +129,7 @@ function MovieItem({ data, type = 'movie' }) {
                     <div className={`${cx('movie__content')} mt-3`}>
                         <div className="d-flex justify-content-between align-item-center mb-3">
                             <Link
+                                to={`/${type}/${data.id}`}
                                 className={` movie--name text-white text-capitalize text-decoration-none f-family`}
                             >
                                 {data.title || data.name}
