@@ -46,7 +46,7 @@ function RecommendItem({ data, type = 'movie' }) {
                 <Link
                     className={`${cx(
                         'name',
-                    )} m-0 text-white text-decoration-none`}
+                    )} m-0 text-white text-decoration-none text--hover`}
                     to={`/${type}/${data.id}`}
                 >
                     {data.title || data.name}

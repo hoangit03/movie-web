@@ -130,7 +130,7 @@ function MovieItem({ data, type = 'movie' }) {
                         <div className="d-flex justify-content-between align-item-center mb-3">
                             <Link
                                 to={`/${type}/${data.id}`}
-                                className={` movie--name text-white text-capitalize text-decoration-none f-family`}
+                                className={`text--hover movie--name text-white text-capitalize text-decoration-none f-family `}
                             >
                                 {data.title || data.name}
                             </Link>

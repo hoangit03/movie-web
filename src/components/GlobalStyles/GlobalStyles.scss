@@ -63,6 +63,13 @@ body {
     color: var(--primary);
 }
 
+.text--hover {
+    transition: 0.3s;
+    &:hover {
+        color: var(--primary) !important;
+    }
+}
+
 .bg--hover {
     transition: 0.3s;
     &:hover {

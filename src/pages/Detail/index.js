@@ -252,7 +252,7 @@ function Detail() {
                                                         }
                                                         return (
                                                             <Link
-                                                                className={` text-decoration-none ${cx(
+                                                                className={`text--hover text-decoration-none ${cx(
                                                                     'text--detail',
                                                                 )}`}
                                                                 key={index}

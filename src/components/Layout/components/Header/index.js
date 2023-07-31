@@ -11,8 +11,6 @@ function Header() {
     const [show, setShow] = useState(false);
     const [search, setSearch] = useState('');
 
-    const handleSearch = () => {};
-
     useEffect(() => {
         const handleScroll = () => {
             setShow(window.scrollY >= 200);
@@ -25,6 +23,11 @@ function Header() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        window.location.href = `/search?search=${search}`;
+    };
 
     return (
         <div
@@ -50,7 +53,7 @@ function Header() {
                             <ul className=" p-0 m-0 d-flex list-unstyled">
                                 <li className="me-5">
                                     <Link
-                                        className=" text-decoration-none text-white text-uppercase fw-bold-700 f-family"
+                                        className=" text--hover text-decoration-none text-white text-uppercase fw-bold-700 f-family"
                                         to="/"
                                     >
                                         home
@@ -58,7 +61,7 @@ function Header() {
                                 </li>
                                 <li className="me-5">
                                     <Link
-                                        className=" text-decoration-none text-white text-uppercase fw-bold-700 f-family"
+                                        className=" text--hover text-decoration-none text-white text-uppercase fw-bold-700 f-family"
                                         to="/movie"
                                     >
                                         movie
@@ -66,7 +69,7 @@ function Header() {
                                 </li>
                                 <li className="me-5">
                                     <Link
-                                        className=" text-decoration-none text-white text-uppercase fw-bold-700 f-family"
+                                        className=" text--hover text-decoration-none text-white text-uppercase fw-bold-700 f-family"
                                         to="/tv-show"
                                     >
                                         tv shows
@@ -74,7 +77,7 @@ function Header() {
                                 </li>
                                 <li className="me-5">
                                     <Link
-                                        className=" text-decoration-none text-white text-uppercase fw-bold-700 f-family"
+                                        className=" text--hover text-decoration-none text-white text-uppercase fw-bold-700 f-family"
                                         to="/pricing-plan"
                                     >
                                         pricing
@@ -82,7 +85,7 @@ function Header() {
                                 </li>
                                 <li className="me-5">
                                     <Link
-                                        className=" text-decoration-none text-white text-uppercase fw-bold-700 f-family"
+                                        className=" text--hover text-decoration-none text-white text-uppercase fw-bold-700 f-family"
                                         to="/contact"
                                     >
                                         contact
@@ -92,7 +95,8 @@ function Header() {
                         </nav>
                         <div className="header__container--action">
                             <div className="d-flex">
-                                <div
+                                <form
+                                    onSubmit={handleSubmit}
                                     className={`${cx(
                                         'search__container',
                                     )} rounded-pill d-flex align-items-center pt-3 pb-3 ps-2 pe-2 me-4`}
@@ -106,11 +110,16 @@ function Header() {
                                         }
                                         className="bg-transparent ps-2 pe-3 text-white f-family"
                                     />
-                                    <FontAwesomeIcon
-                                        icon={faMagnifyingGlass}
-                                        className=" flex-grow-1"
-                                    />
-                                </div>
+                                    <button
+                                        type="submit"
+                                        className="border-0 bg-transparent p-0 flex-grow-1"
+                                    >
+                                        <FontAwesomeIcon
+                                            icon={faMagnifyingGlass}
+                                            className=" "
+                                        />
+                                    </button>
+                                </form>
                                 <button
                                     className={`${cx(
                                         'btn--login',

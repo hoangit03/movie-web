@@ -1,0 +1,30 @@
+.wrapper {
+    border: 1px solid #1f1e24;
+    height: 141px;
+    background-color: #202129;
+
+    .poster {
+        min-width: 94px;
+        width: 94px;
+        height: 141px;
+        img {
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .content {
+        padding: 0 15px;
+    }
+
+    .text--search {
+        color: #bcbcbc;
+    }
+
+    .overview {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}

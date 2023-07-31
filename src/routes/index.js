@@ -5,6 +5,7 @@ import TVSHow from '~/pages/TVShow';
 import Contact from '~/pages/Contact';
 import Pricing from '~/pages/Pricing';
 import Detail from '~/pages/Detail';
+import Search from '~/pages/Search';
 
 // Public routes
 const publicRoutes = [
@@ -21,6 +22,7 @@ const publicRoutes = [
         name: '',
         layout: HeaderAndFooterOnly,
     },
+    { path: '/search', component: Search, name: 'search' },
     { path: '/contact', component: Contact, name: 'contact' },
     { path: '/pricing-plan', component: Pricing, name: 'pricing plan' },
     { path: '/', component: Home, name: '', layout: HeaderAndFooterOnly },

@@ -4,7 +4,7 @@ import styles from './BackgroundTitle.module.scss';
 
 const cx = classNames.bind(styles);
 
-function BackgroundTitle({ name }) {
+function BackgroundTitle({ name, search = '' }) {
     return (
         <div className={`${cx('wrapper')} position-relative`}>
             <div
@@ -13,7 +13,9 @@ function BackgroundTitle({ name }) {
                 )} position-absolute translate-middle top-50 start-50 text-center f-family`}
             >
                 <h1 className=" text-white text-capitalize fw-bold-700">
-                    {name}
+                    {name === 'search'
+                        ? `Search Results for : ${search}`
+                        : name}
                 </h1>
                 <Link
                     to="/"
@@ -22,7 +24,9 @@ function BackgroundTitle({ name }) {
                     home
                 </Link>
                 <span className=" text-uppercase text-white fw-bold-700">
-                    {name}
+                    {name === 'search'
+                        ? `Search Results for : ${search}`
+                        : name}
                 </span>
             </div>
         </div>
