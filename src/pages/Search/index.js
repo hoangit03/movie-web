@@ -286,7 +286,10 @@ function Search() {
                                                 ? `bg--primary`
                                                 : `bg--hover`
                                         } p-2 ps-3 pe-3 d-flex align-items-center justify-content-between`}
-                                        onClick={() => setCate(result.id)}
+                                        onClick={() => {
+                                            setCate(result.id);
+                                            setPage(1);
+                                        }}
                                     >
                                         <span className={`fw-bold-700`}>
                                             {result.name}

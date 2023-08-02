@@ -1,0 +1,43 @@
+.wrapper {
+    background-color: #100f16;
+    padding: 175px 0 120px;
+
+    .text--person {
+        color: #bcbcbc;
+    }
+
+    .name--film {
+        font-size: 14px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: block;
+    }
+
+    .pre-wrap {
+        white-space: pre-wrap;
+    }
+
+    .custom--scroll::-webkit-scrollbar {
+        background-color: transparent;
+        height: 8px;
+    }
+
+    .custom--scroll::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #bcbcbc;
+    }
+
+    .know--container__film {
+        height: 196px;
+        width: 130px;
+    }
+
+    .bg-acting {
+        background-color: #202128;
+    }
+
+    .border--bottom {
+        border-bottom: 1px solid #bcbcbc79;
+    }
+}

@@ -6,6 +6,7 @@ import Contact from '~/pages/Contact';
 import Pricing from '~/pages/Pricing';
 import Detail from '~/pages/Detail';
 import Search from '~/pages/Search';
+import Person from '~/pages/Person';
 
 // Public routes
 const publicRoutes = [
@@ -23,6 +24,12 @@ const publicRoutes = [
         layout: HeaderAndFooterOnly,
     },
     { path: '/search', component: Search, name: 'search' },
+    {
+        path: '/person/:id',
+        component: Person,
+        name: '',
+        layout: HeaderAndFooterOnly,
+    },
     { path: '/contact', component: Contact, name: 'contact' },
     { path: '/pricing-plan', component: Pricing, name: 'pricing plan' },
     { path: '/', component: Home, name: '', layout: HeaderAndFooterOnly },
