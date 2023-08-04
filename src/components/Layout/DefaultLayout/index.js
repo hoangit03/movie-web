@@ -14,7 +14,12 @@ function DefaultLayout({ name, path, children }) {
     return (
         <div className={``}>
             <Header />
-            <BackgroundTitle name={name} path={path} search={searchQuery} />
+            <BackgroundTitle
+                name={name}
+                path={path}
+                search={searchQuery}
+                genre={1}
+            />
             <div className={`${cx('bg--main')} pt-5`}>
                 <div className="container">
                     <div className="content">{children}</div>

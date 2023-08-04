@@ -7,6 +7,7 @@ import Pricing from '~/pages/Pricing';
 import Detail from '~/pages/Detail';
 import Search from '~/pages/Search';
 import Person from '~/pages/Person';
+import Genre from '~/pages/Genre';
 
 // Public routes
 const publicRoutes = [
@@ -31,6 +32,8 @@ const publicRoutes = [
         layout: HeaderAndFooterOnly,
     },
     { path: '/contact', component: Contact, name: 'contact' },
+    { path: '/movie/genre/:id', component: Genre, name: 'Movies Category' },
+    { path: '/tv/genre/:id', component: Genre, name: 'Tv Shows Category' },
     { path: '/pricing-plan', component: Pricing, name: 'pricing plan' },
     { path: '/', component: Home, name: '', layout: HeaderAndFooterOnly },
     { path: '/tv-show', component: TVSHow, name: 'Tv shows' },

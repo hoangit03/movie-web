@@ -252,6 +252,7 @@ function Detail() {
                                                         }
                                                         return (
                                                             <Link
+                                                                to={`/${type}/genre/${genre.id}`}
                                                                 className={`text--hover text-decoration-none ${cx(
                                                                     'text--detail',
                                                                 )}`}

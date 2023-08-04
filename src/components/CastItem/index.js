@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './CastItem.module.scss';
 import classNames from 'classnames/bind';
 
@@ -17,9 +18,14 @@ function CastItem({ data }) {
                 />
             </div>
             <div className={`${cx('content')} p-2 pt-3 text-white f-family`}>
-                <h5 className={`${cx('name')} fw-bold-600 m-0 mb-1`}>
+                <Link
+                    to={`/person/${data.id}`}
+                    className={`${cx(
+                        'name',
+                    )} fw-bold-600 m-0 mb-1 text--hover text-decoration-none text-white`}
+                >
                     {data.name}
-                </h5>
+                </Link>
                 <p className={`${cx('character')} m-0`}>{data.character}</p>
             </div>
         </div>

@@ -73,7 +73,9 @@ function SearchItem({ data, type = 'movie' }) {
                         formatDate(data.release_date || data.first_air_date)
                     )}
                 </p>
-                <p className={`${cx('overview')} m-0`}>{data.overview}</p>
+                <p className={`${cx('overview')} m-0 text-white`}>
+                    {data.overview}
+                </p>
             </div>
         </div>
     );
