@@ -48,7 +48,9 @@ function CommentItem({ data }) {
                             A review by {data.author}
                         </Link>
                         <div className={` d-flex align-items-center`}>
-                            <div className={` rounded me-3`}>
+                            <div
+                                className={` rounded me-3 d-flex align-items-center justify-content-center`}
+                            >
                                 <FontAwesomeIcon icon={faStar} />
                                 <span className={`ms-2`}>
                                     {data.author_details.rating

@@ -21,10 +21,10 @@ function Footer() {
     return (
         <div className={`${cx('wrapper')}`}>
             <div className={`${cx('footer-bg')}`}>
-                <div className={`container`}>
+                <div className={`container-xl`}>
                     <div className={`row`}>
                         <div className={`col-lg-3`}>
-                            <div className={`${cx('items')}`}>
+                            <div className={`${cx('items')} mb-3`}>
                                 <a href="/" className="pb-2 d-inline-block">
                                     <img
                                         width={154}
@@ -83,7 +83,7 @@ function Footer() {
                             </div>
                         </div>
                         <div className={`col-lg-3`}>
-                            <div className={`${cx('items')}`}>
+                            <div className={`${cx('items')} mb-3`}>
                                 <p
                                     className={`underlined--letters text-white f-family`}
                                 >
@@ -130,7 +130,7 @@ function Footer() {
                             </div>
                         </div>
                         <div className={`col-lg-3`}>
-                            <div className={`${cx('items')}`}>
+                            <div className={`${cx('items')} mb-3`}>
                                 <p
                                     className={`underlined--letters text-white f-family`}
                                 >
@@ -168,7 +168,7 @@ function Footer() {
                             </div>
                         </div>
                         <div className={`col-lg-3`}>
-                            <div className={`${cx('items')}`}>
+                            <div className={`${cx('items')} mb-3`}>
                                 <p
                                     className={`underlined--letters text-white f-family`}
                                 >
@@ -244,7 +244,7 @@ function Footer() {
                 </div>
             </div>
             <div className={`${cx('copy-right-bg')} `}>
-                <div className={`container`}>
+                <div className={`container-xl`}>
                     <div
                         className={`d-flex align-items-center justify-content-between`}
                     >

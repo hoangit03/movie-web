@@ -21,7 +21,7 @@ function DefaultLayout({ name, path, children }) {
                 genre={1}
             />
             <div className={`${cx('bg--main')} pt-5`}>
-                <div className="container">
+                <div className=" container-xl">
                     <div className="content">{children}</div>
                 </div>
             </div>

@@ -92,7 +92,7 @@ function Home() {
                 </div>
                 <div className={``}>
                     <div className={`${cx('ucm-bg')}`}>
-                        <div className={`container`}>
+                        <div className={`container-xl`}>
                             <div
                                 className={`${cx(
                                     'title-container',
@@ -121,17 +121,18 @@ function Home() {
                         </div>
                     </div>
                     <div className={`${cx('services-bg')}`}>
-                        <div className={`container`}>
+                        <div className={`container-xl`}>
                             <div className={`row`}>
                                 <div className={` col-lg-6`}>
                                     <div
                                         className={`${cx(
                                             'service--img',
-                                        )} d-flex align-items-end position-relative`}
+                                        )} d-flex align-items-end position-relative mb-4`}
                                     >
                                         <img
                                             src="https://themehut.co/wp/movflx/wp-content/uploads/2022/08/services_img.jpg"
                                             alt=""
+                                            className={`w-100`}
                                         />
                                         <a
                                             className={`ms-4 text-decoration-none f-family ${cx(
@@ -153,7 +154,7 @@ function Home() {
                                     <div
                                         className={`${cx(
                                             'service--desc',
-                                        )} text-white f-family ms-5`}
+                                        )} text-white f-family`}
                                     >
                                         <p
                                             className={`${cx(
@@ -286,7 +287,7 @@ function Home() {
                         </div>
                     </div>
                     <div className={`${cx('top-rate-bg')}`}>
-                        <div className={`${cx('container')}`}>
+                        <div className={`${cx('container-xl')}`}>
                             <div
                                 className={`${cx(
                                     'title__container',
@@ -301,43 +302,43 @@ function Home() {
                                     Top Rated Movies
                                 </h1>
                             </div>
+                            <div className={`row`}>
+                                {moviesTopRate.map((movie, index) => (
+                                    <MovieItem key={index} data={movie} />
+                                ))}
+                            </div>
+                            <button
+                                style={{
+                                    width: 300,
+                                    height: 60,
+                                    fontSize: 18,
+                                }}
+                                className={`mt-4 bg-transparent f-family fw-bold-700 bg--hover border--primary rounded text-white d-flex align-items-center justify-content-center m-auto`}
+                                onClick={() => setPage(page + 1)}
+                            >
+                                {loadMore ? (
+                                    <>
+                                        <span className="me-3">Loading...</span>
+                                        <img
+                                            src="https://themehut.co/wp/movflx/wp-content/themes/movflx/assets/img/preloader.svg"
+                                            alt=""
+                                            className=" h-75 rounded-circle"
+                                        />
+                                    </>
+                                ) : (
+                                    'Load More'
+                                )}
+                            </button>
                         </div>
-                        <div className={`row`}>
-                            {moviesTopRate.map((movie, index) => (
-                                <MovieItem key={index} data={movie} />
-                            ))}
-                        </div>
-                        <button
-                            style={{
-                                width: 300,
-                                height: 60,
-                                fontSize: 18,
-                            }}
-                            className={`mt-4 bg-transparent f-family fw-bold-700 bg--hover border--primary rounded text-white d-flex align-items-center justify-content-center m-auto`}
-                            onClick={() => setPage(page + 1)}
-                        >
-                            {loadMore ? (
-                                <>
-                                    <span className="me-3">Loading...</span>
-                                    <img
-                                        src="https://themehut.co/wp/movflx/wp-content/themes/movflx/assets/img/preloader.svg"
-                                        alt=""
-                                        className=" h-75 rounded-circle"
-                                    />
-                                </>
-                            ) : (
-                                'Load More'
-                            )}
-                        </button>
                     </div>
                     <div className={`${cx('live-bg')}`}>
-                        <div className={`container`}>
+                        <div className={`container-xl`}>
                             <div className={`row`}>
                                 <div className={`col-lg-5`}>
                                     <div
                                         className={`${cx(
                                             'live--desc',
-                                        )} text-white f-family ms-5 `}
+                                        )} text-white f-family `}
                                     >
                                         <p
                                             className={`${cx(
@@ -381,7 +382,7 @@ function Home() {
                         </div>
                     </div>
                     <div className={`${cx('top-rate-bg')}`}>
-                        <div className={`${cx('container')}`}>
+                        <div className={`${cx('container-xl')}`}>
                             <div
                                 className={`${cx(
                                     'title__container',
@@ -396,34 +397,38 @@ function Home() {
                                     World Best TV Series
                                 </h1>
                             </div>
-                        </div>
-                        <div className={`row`}>
-                            {tvs.map((tv, index) => (
-                                <MovieItem key={index} data={tv} type="tv" />
-                            ))}
-                        </div>
-                        <button
-                            style={{
-                                width: 300,
-                                height: 60,
-                                fontSize: 18,
-                            }}
-                            className={`mt-4 bg-transparent f-family fw-bold-700 bg--hover border--primary rounded text-white d-flex align-items-center justify-content-center m-auto`}
-                            onClick={() => setPageTv(pageTv + 1)}
-                        >
-                            {loadMore ? (
-                                <>
-                                    <span className="me-3">Loading...</span>
-                                    <img
-                                        src="https://themehut.co/wp/movflx/wp-content/themes/movflx/assets/img/preloader.svg"
-                                        alt=""
-                                        className=" h-75 rounded-circle"
+                            <div className={`row`}>
+                                {tvs.map((tv, index) => (
+                                    <MovieItem
+                                        key={index}
+                                        data={tv}
+                                        type="tv"
                                     />
-                                </>
-                            ) : (
-                                'Load More'
-                            )}
-                        </button>
+                                ))}
+                            </div>
+                            <button
+                                style={{
+                                    width: 300,
+                                    height: 60,
+                                    fontSize: 18,
+                                }}
+                                className={`mt-4 bg-transparent f-family fw-bold-700 bg--hover border--primary rounded text-white d-flex align-items-center justify-content-center m-auto`}
+                                onClick={() => setPageTv(pageTv + 1)}
+                            >
+                                {loadMore ? (
+                                    <>
+                                        <span className="me-3">Loading...</span>
+                                        <img
+                                            src="https://themehut.co/wp/movflx/wp-content/themes/movflx/assets/img/preloader.svg"
+                                            alt=""
+                                            className=" h-75 rounded-circle"
+                                        />
+                                    </>
+                                ) : (
+                                    'Load More'
+                                )}
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

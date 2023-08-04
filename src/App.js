@@ -4,7 +4,7 @@ import { DefaultLayout } from './components/Layout';
 function App() {
     return (
         <BrowserRouter>
-            <div className="App">
+            <div className="App overflow-hidden">
                 <Routes>
                     {publicRoutes.map((publicRoute, index) => {
                         const Page = publicRoute.component;

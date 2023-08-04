@@ -12,17 +12,21 @@
     background-color: var(--dark);
     width: 280px;
     position: relative;
+    display: flex;
 
-    &::before {
-        content: '';
-        display: block;
-        width: 1px;
-        height: 10px;
-        position: absolute;
-        top: 50%;
-        right: 50px;
-        transform: translateY(-50%);
-        background-color: #2c2e35;
+    button {
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 10px;
+            position: absolute;
+            top: 50%;
+            left: 0px;
+            transform: translateY(-50%);
+            background-color: #2c2e35;
+        }
     }
 
     input {
@@ -57,5 +61,77 @@
     100% {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+.border--bottom {
+    border-bottom: 1px solid #2a2f33;
+}
+
+.hidden-modal {
+    animation: hideModal ease-in-out 0.5s forwards;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s;
+    animation: showModal ease-in-out 0.5s forwards;
+}
+
+.opacity-hide {
+    animation: opacityHide ease 0.5s forwards;
+}
+.opacity-show {
+    animation: opacityShow ease 0.5s forwards;
+}
+
+@keyframes opacityHide {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes opacityShow {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hideModal {
+    0% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translate(100%, 0);
+    }
+}
+
+@keyframes showModal {
+    0% {
+        transform: translate(100%, 0);
+    }
+
+    100% {
+        transform: translate(0);
     }
 }

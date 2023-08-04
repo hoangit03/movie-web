@@ -95,3 +95,16 @@ body {
         border-radius: 999999px;
     }
 }
+
+.hidden--pc {
+    display: none;
+}
+
+#modalMenu.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+    transform: translate(100%, 0px);
+}
+
+#modalMenu.modal.show .modal-dialog {
+    transform: translate(0%, 0px);
+}

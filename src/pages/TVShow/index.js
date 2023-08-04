@@ -136,7 +136,7 @@ function TVSHow() {
                     <div
                         className={` justify-content-between align-items-start pb-5 row`}
                     >
-                        <div className={`col-lg-4`}>
+                        <div className={`col-lg-4 mb-4`}>
                             <p
                                 className={`${cx(
                                     'sub-title',
@@ -147,7 +147,7 @@ function TVSHow() {
                             <p
                                 className={`${cx(
                                     'title',
-                                )} text-white fw-bold-700 f-family mb-0`}
+                                )} text-white fw-bold-700 f-family mb-0 lh-1`}
                             >
                                 New Tv Shows
                             </p>
@@ -165,7 +165,7 @@ function TVSHow() {
                                                 : ''
                                         } ${cx(
                                             'items',
-                                        )} pt-2 pb-2 ps-4 pe-4 ms-3 mb-2 rounded-pill f-family text-white fw-bold-700 border--no-color`}
+                                        )} pt-2 pb-2 ps-4 pe-4 me-3 mb-2 rounded-pill f-family text-white fw-bold-700 border--no-color`}
                                         onClick={() => {
                                             setCate(category.id);
                                             setPage(1);
@@ -190,7 +190,7 @@ function TVSHow() {
                     </div>
                 </div>
                 <div
-                    className={`${cx()} d-flex align-items-center justify-content-center mt-3 pb-5`}
+                    className={`${cx()} d-flex align-items-center justify-content-center mt-3 pb-5 flex-wrap row-gap-3`}
                 >
                     {totalPage > 0 && renderPage(page)}
                 </div>

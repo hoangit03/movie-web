@@ -268,7 +268,7 @@ function Search() {
                         <div
                             className={`${cx(
                                 'table--result',
-                            )} rounded overflow-hidden`}
+                            )} rounded overflow-hidden mb-4`}
                         >
                             <h5
                                 className={`${cx(
@@ -317,7 +317,7 @@ function Search() {
                             ))}
                         </div>
                         <div
-                            className={`${cx()} d-flex align-items-center justify-content-center pt-4 mt-3 pb-4`}
+                            className={`${cx()} d-flex align-items-center justify-content-center pt-4 mt-3 pb-4 flex-wrap row-gap-3`}
                         >
                             {totalPage > 1 && renderPage(page)}
                         </div>

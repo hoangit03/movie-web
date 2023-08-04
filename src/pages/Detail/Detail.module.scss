@@ -54,6 +54,9 @@
         img {
             height: 100%;
             width: 100%;
+            object-fit: contain;
+            object-position: center;
+            border-radius: 16px;
         }
     }
 
@@ -88,6 +91,16 @@
             }
         }
     }
+}
+
+.custom--scroll::-webkit-scrollbar {
+    background-color: transparent;
+    height: 8px;
+}
+
+.custom--scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #bcbcbc;
 }
 
 .border--bottom {

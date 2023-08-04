@@ -116,8 +116,8 @@ function Detail() {
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
                     infinite: true,
                     dots: true,
                 },
@@ -126,14 +126,14 @@ function Detail() {
                 breakpoint: 600,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2,
+                    slidesToScroll: 1,
                     initialSlide: 2,
                 },
             },
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
                 },
             },
@@ -194,29 +194,35 @@ function Detail() {
                 <div className={`${cx('wrapper')}`}>
                     <div
                         style={{
-                            backgroundImage: `url('https://image.tmdb.org/t/p/original${data.backdrop_path}')`,
+                            backgroundImage: data.backdrop_path
+                                ? `url('https://image.tmdb.org/t/p/original${data.backdrop_path}')`
+                                : `url('https://themehut.co/wp/movflx/wp-content/themes/movflx/assets/img/bg/movie_details_bg.jpg')`,
                         }}
                         className={`${cx('movie-detail-bg')}`}
                     >
-                        <div className={`container position-relative z-1`}>
-                            <div className={`d-flex align-items-center`}>
-                                <div className="col-lg-3">
+                        <div className={`container-xl position-relative z-1`}>
+                            <div className={`row align-items-center`}>
+                                <div className="col-lg-3 col-md-4 col-sm-12">
                                     <div
                                         className={`${cx(
                                             'poster',
-                                        )} rounded overflow-hidden`}
+                                        )} rounded overflow-hidden mb-4`}
                                     >
                                         <img
-                                            src={`https://image.tmdb.org/t/p/original${data.poster_path}`}
+                                            src={`${
+                                                data.poster_path
+                                                    ? `https://image.tmdb.org/t/p/original${data.poster_path}`
+                                                    : `https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg`
+                                            }`}
                                             alt=""
                                         />
                                     </div>
                                 </div>
-                                <div className="col-lg-9">
+                                <div className="col-lg-9 col-md-8 col-sm-12">
                                     <div
                                         className={`${cx(
                                             'movie--content',
-                                        )} text-white f-family ms-5`}
+                                        )} text-white f-family`}
                                     >
                                         <h2 className={`fw-bold-700 mb-4`}>
                                             {data.title || data.name}
@@ -309,7 +315,7 @@ function Detail() {
                         </div>
                     </div>
                     <div className={`${cx('detail-main-bg')} pt-5 pb-5`}>
-                        <div className={`container`}>
+                        <div className={`container-xl`}>
                             {casts.length > 0 && (
                                 <div className={`${cx('cast--container')}`}>
                                     <h3
@@ -386,58 +392,50 @@ function Detail() {
                                     <div
                                         className={`pt-3 ${cx(
                                             'border--bottom',
-                                        )} pb-5`}
+                                            'custom--scroll',
+                                        )} pb-5 d-flex overflow-x-scroll`}
                                     >
-                                        <Slider {...settingsVideos}>
-                                            {data.videos.results.map(
-                                                (video) => (
-                                                    <div
-                                                        key={video.id}
-                                                        className={`${cx(
-                                                            'video--container',
-                                                        )} me-2`}
+                                        {data.videos.results.map((video) => (
+                                            <div
+                                                key={video.id}
+                                                className={`${cx(
+                                                    'video--container',
+                                                )} me-2`}
+                                            >
+                                                <div
+                                                    style={{
+                                                        width: 533,
+                                                    }}
+                                                    className={`${cx(
+                                                        'video',
+                                                    )} rounded overflow-hidden me-3 position-relative`}
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#modalId"
+                                                    onClick={() =>
+                                                        setKey(video.key)
+                                                    }
+                                                >
+                                                    <img
+                                                        src={`https://i.ytimg.com/vi/${video.key}/hqdefault.jpg`}
+                                                        alt=""
+                                                    />
+                                                    <a
+                                                        className={`position-absolute top-50 start-50 translate-middle`}
                                                     >
                                                         <div
-                                                            style={{
-                                                                width: 533,
-                                                            }}
                                                             className={`${cx(
-                                                                'video',
-                                                            )} rounded overflow-hidden me-3 position-relative`}
+                                                                'play',
+                                                            )} d-flex align-items-center justify-content-center rounded-circle`}
                                                         >
-                                                            <img
-                                                                src={`https://i.ytimg.com/vi/${video.key}/hqdefault.jpg`}
-                                                                alt=""
+                                                            <FontAwesomeIcon
+                                                                className="text-white"
+                                                                icon={faPlay}
                                                             />
-                                                            <a
-                                                                data-bs-toggle="modal"
-                                                                data-bs-target="#modalId"
-                                                                href={`/video/play?key=${video.key}`}
-                                                                className={`position-absolute top-50 start-50 translate-middle`}
-                                                                onClick={() =>
-                                                                    setKey(
-                                                                        video.key,
-                                                                    )
-                                                                }
-                                                            >
-                                                                <div
-                                                                    className={`${cx(
-                                                                        'play',
-                                                                    )} d-flex align-items-center justify-content-center rounded-circle`}
-                                                                >
-                                                                    <FontAwesomeIcon
-                                                                        className="text-white"
-                                                                        icon={
-                                                                            faPlay
-                                                                        }
-                                                                    />
-                                                                </div>
-                                                            </a>
                                                         </div>
-                                                    </div>
-                                                ),
-                                            )}
-                                        </Slider>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             )}
@@ -473,7 +471,7 @@ function Detail() {
                 aria-hidden="true"
             >
                 <div
-                    style={{ maxWidth: 1200 }}
+                    style={{ maxWidth: '97%' }}
                     className="modal-dialog modal-dialog-centered rounded overflow-hidden"
                     role="document"
                 >

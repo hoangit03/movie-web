@@ -9,7 +9,7 @@ function CastItem({ data }) {
         <div
             className={`${cx(
                 'wrapper',
-            )} rounded overflow-hidden me-3 d-flex flex-column`}
+            )} rounded overflow-hidden ms-2 me-2 d-flex flex-column`}
         >
             <div className={`${cx('img')} flex-grow-1`}>
                 <img

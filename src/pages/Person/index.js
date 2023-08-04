@@ -8,6 +8,7 @@ const cx = classNames.bind(styles);
 
 function Person() {
     const { id } = useParams();
+    const [combinedCredits, setCombinedCredits] = useState([]);
     const [person, setPerson] = useState();
     const [years, setYears] = useState([]);
     const [crews, setCrews] = useState([]);
@@ -17,6 +18,18 @@ function Person() {
         const currentYear = new Date().getFullYear();
         const yearOfBirth = new Date(date).getFullYear();
         return currentYear - yearOfBirth;
+    };
+
+    const timeRepeat = (array, number) => {
+        let count = 0;
+
+        array.map((item) => {
+            if (item.credit_id === number) {
+                count++;
+            }
+        });
+
+        return count;
     };
 
     const getYear = (date) => new Date(date).getFullYear();
@@ -82,6 +95,19 @@ function Person() {
                 }
             });
             setCrews(departments);
+
+            var combinedCredits = [];
+            person.combined_credits.cast.map((cast) => {
+                if (
+                    combinedCredits.length == 0 ||
+                    !combinedCredits.find((item) => item.id === cast.id)
+                ) {
+                    combinedCredits.push(cast);
+                }
+            });
+            console.log(combinedCredits);
+            console.log(person.combined_credits.cast);
+            setCombinedCredits(combinedCredits);
         }
     }, [person]);
 
@@ -307,7 +333,7 @@ function Person() {
                                                                   )}`
                                                         } p-4 mb-3`}
                                                     >
-                                                        {person.combined_credits.cast.map(
+                                                        {combinedCredits.map(
                                                             (cast) => {
                                                                 if (
                                                                     getYear(
@@ -320,7 +346,7 @@ function Person() {
                                                                     return (
                                                                         <div
                                                                             key={
-                                                                                cast.id
+                                                                                cast.credit_id
                                                                             }
                                                                             className={`d-flex align-items-center mb-2`}
                                                                         >
@@ -415,7 +441,7 @@ function Person() {
                                                                                 return (
                                                                                     <div
                                                                                         key={
-                                                                                            cast.id
+                                                                                            cast.credit_id
                                                                                         }
                                                                                         className={`d-flex align-items-center mb-2`}
                                                                                     >
