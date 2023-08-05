@@ -6,10 +6,15 @@ import {
     faLocationDot,
     faPhone,
 } from '@fortawesome/free-solid-svg-icons';
+import { useEffect } from 'react';
 
 const cx = classNames.bind(styles);
 
 function Contact() {
+    useEffect(() => {
+        document.title = 'Contact - Movflx';
+    }, []);
+
     return (
         <div className={`${cx('wrapper')}`}>
             <div className="pb-5">

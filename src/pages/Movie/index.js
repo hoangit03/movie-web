@@ -11,41 +11,6 @@ import {
 
 const cx = classNames.bind(styles);
 
-// const categories = [
-//     {
-//         id: 28,
-//         name: 'Action',
-//     },
-//     {
-//         id: 12,
-//         name: 'Adventure',
-//     },
-//     {
-//         id: 16,
-//         name: 'Animation',
-//     },
-//     {
-//         id: 35,
-//         name: 'Comedy',
-//     },
-//     {
-//         id: 80,
-//         name: 'Crime',
-//     },
-//     {
-//         id: 99,
-//         name: 'Documentary',
-//     },
-//     {
-//         id: 18,
-//         name: 'Drama',
-//     },
-//     {
-//         id: 10751,
-//         name: 'Family',
-//     },
-// ];
-
 function Movie() {
     const [movies, setMovies] = useState([]);
     const [cate, setCate] = useState('');
@@ -163,6 +128,10 @@ function Movie() {
                 }, 1500);
             });
     }, [cate]);
+
+    useEffect(() => {
+        document.title = 'Our Movies - Movflx';
+    }, []);
 
     return (
         <>

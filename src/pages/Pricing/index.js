@@ -2,10 +2,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './Pricing.module.scss';
 import classNames from 'classnames/bind';
 import { faCheck, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { useEffect } from 'react';
 
 const cx = classNames.bind(styles);
 
 function Pricing() {
+    useEffect(() => {
+        document.title = 'Pricing Plan - Movflx';
+    }, []);
+
     return (
         <div className={`${cx('wrapper')}`}>
             <div

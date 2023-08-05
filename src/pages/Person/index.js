@@ -105,9 +105,8 @@ function Person() {
                     combinedCredits.push(cast);
                 }
             });
-            console.log(combinedCredits);
-            console.log(person.combined_credits.cast);
             setCombinedCredits(combinedCredits);
+            document.title = `${person.name} - Movflx`;
         }
     }, [person]);
 
@@ -118,7 +117,7 @@ function Person() {
                     <div className={`container`}>
                         <div className={`row`}>
                             <div className={`col-lg-3`}>
-                                <div className={`${cx('info--actor')}`}>
+                                <div className={`${cx('info--actor')} mb-4`}>
                                     <div
                                         className={`${cx(
                                             'avatar',
@@ -260,53 +259,51 @@ function Person() {
                                                 'custom--scroll',
                                             )} overflow-x-scroll pb-3 `}
                                         >
-                                            {person.combined_credits.cast.map(
-                                                (cast) => (
+                                            {combinedCredits.map((cast) => (
+                                                <div
+                                                    key={cast.id}
+                                                    style={{
+                                                        width: 130,
+                                                    }}
+                                                    className={`text-center me-3 `}
+                                                >
                                                     <div
-                                                        key={cast.id}
                                                         style={{
-                                                            width: 130,
+                                                            backgroundColor:
+                                                                !cast.poster_path &&
+                                                                '#dbdbdb',
                                                         }}
-                                                        className={`text-center me-3 `}
+                                                        className={` rounded overflow-hidden mb-3 ${cx(
+                                                            'know--container__film',
+                                                        )}`}
                                                     >
-                                                        <div
-                                                            style={{
-                                                                backgroundColor:
-                                                                    !cast.poster_path &&
-                                                                    '#dbdbdb',
-                                                            }}
-                                                            className={` rounded overflow-hidden mb-3 ${cx(
-                                                                'know--container__film',
-                                                            )}`}
+                                                        <Link
+                                                            to={`/${cast.media_type}/${cast.id}`}
                                                         >
-                                                            <Link
-                                                                to={`/${cast.media_type}/${cast.id}`}
-                                                            >
-                                                                <img
-                                                                    className={`w-100 h-100`}
-                                                                    src={`${
-                                                                        cast.poster_path
-                                                                            ? `https://www.themoviedb.org/t/p/w150_and_h225_bestv2/${cast.poster_path}`
-                                                                            : `https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg`
-                                                                    }`}
-                                                                    alt=""
-                                                                />
-                                                            </Link>
-                                                        </div>
-                                                        <div>
-                                                            <Link
-                                                                to={`/${cast.media_type}/${cast.id}`}
-                                                                className={` text-decoration-none text-white ${cx(
-                                                                    'name--film',
-                                                                )} text--hover`}
-                                                            >
-                                                                {cast.title ||
-                                                                    cast.name}
-                                                            </Link>
-                                                        </div>
+                                                            <img
+                                                                className={`w-100 h-100`}
+                                                                src={`${
+                                                                    cast.poster_path
+                                                                        ? `https://www.themoviedb.org/t/p/w150_and_h225_bestv2/${cast.poster_path}`
+                                                                        : `https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg`
+                                                                }`}
+                                                                alt=""
+                                                            />
+                                                        </Link>
                                                     </div>
-                                                ),
-                                            )}
+                                                    <div>
+                                                        <Link
+                                                            to={`/${cast.media_type}/${cast.id}`}
+                                                            className={` text-decoration-none text-white ${cx(
+                                                                'name--film',
+                                                            )} text--hover`}
+                                                        >
+                                                            {cast.title ||
+                                                                cast.name}
+                                                        </Link>
+                                                    </div>
+                                                </div>
+                                            ))}
                                         </div>
                                     </div>
                                     <div className={``}>

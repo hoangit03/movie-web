@@ -188,6 +188,10 @@ function Detail() {
             .then((data) => setComments(data.results));
     }, [params.id]);
 
+    useEffect(() => {
+        if (data) document.title = `${data.title || data.name} - Movflx`;
+    }, [data]);
+
     return (
         <>
             {data && (
@@ -410,7 +414,7 @@ function Detail() {
                                                         'video',
                                                     )} rounded overflow-hidden me-3 position-relative`}
                                                     data-bs-toggle="modal"
-                                                    data-bs-target="#modalId"
+                                                    data-bs-target="#modalVideo"
                                                     onClick={() =>
                                                         setKey(video.key)
                                                     }
@@ -463,7 +467,7 @@ function Detail() {
             <div
                 ref={videoRef}
                 className="modal fade"
-                id="modalId"
+                id="modalVideo"
                 data-bs-backdrop="static"
                 data-bs-keyboard="false"
                 role="dialog"

@@ -8,7 +8,7 @@ import {
     faTv,
     faVideoCamera,
 } from '@fortawesome/free-solid-svg-icons';
-import { faViacoin } from '@fortawesome/free-brands-svg-icons';
+import { faViacoin, faWindows } from '@fortawesome/free-brands-svg-icons';
 import Loading from '~/components/Loading';
 
 const cx = classNames.bind(styles);
@@ -33,6 +33,10 @@ function Home() {
                     setLoading(false);
                 }, 1500);
             });
+    }, []);
+
+    useEffect(() => {
+        document.title = 'Movflx - Online Movies & TV Shows';
     }, []);
 
     useEffect(() => {

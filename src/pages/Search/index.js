@@ -260,6 +260,10 @@ function Search() {
             });
     }, [cate]);
 
+    useEffect(() => {
+        document.title = `Search Result for "${searchQuery}" - Movflx`;
+    }, []);
+
     return (
         <>
             <div className={`${cx('wrapper')} f-family text-white pb-5`}>

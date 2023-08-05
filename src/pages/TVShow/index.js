@@ -129,6 +129,10 @@ function TVSHow() {
             });
     }, [cate]);
 
+    useEffect(() => {
+        document.title = 'Tv Shows - Movflx';
+    }, []);
+
     return (
         <>
             <div className={`${cx('wrapper')} pt-5 pb-5`}>

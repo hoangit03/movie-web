@@ -16,6 +16,8 @@ function Genre() {
     const [page, setPage] = useState(1);
     const [data, setData] = useState([]);
     const [loadMore, setLoadMore] = useState(false);
+    const params = useParams();
+    const id_genre = parseInt(params.id);
 
     useEffect(() => {
         setLoadMore(true);
@@ -32,6 +34,24 @@ function Genre() {
             });
     }, [page]);
 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(
+                    `https://api.themoviedb.org/3/genre/movie/list?api_key=e9e9d8da18ae29fc430845952232787c&language=en-US`,
+                );
+                const data = await response.json();
+                const genreName = data.genres.find(
+                    (genre) => genre.id === id_genre,
+                ).name;
+                document.title = `${genreName} - Movflx`;
+            } catch (error) {
+                console.error('Error fetching genre:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
     return (
         <>
             <div className={`${cx('wrapper')}`}>
