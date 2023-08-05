@@ -229,7 +229,7 @@ function Search() {
                     setLoading(false);
                 }, 1800);
             });
-    }, [page]);
+    }, [page, searchQuery]);
 
     useEffect(() => {
         searchResult.map((result) => {
@@ -241,7 +241,8 @@ function Search() {
                     result.total_results = data.total_results;
                 });
         });
-    }, []);
+        setCate(1);
+    }, [searchQuery]);
 
     useEffect(() => {
         setLoading(true);
@@ -258,11 +259,11 @@ function Search() {
                     setLoading(false);
                 }, 1600);
             });
-    }, [cate]);
+    }, [cate, searchQuery]);
 
     useEffect(() => {
         document.title = `Search Result for "${searchQuery}" - Movflx`;
-    }, []);
+    }, [searchQuery]);
 
     return (
         <>

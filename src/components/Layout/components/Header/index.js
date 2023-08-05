@@ -41,6 +41,7 @@ function Header() {
         if (search.trim() !== '') {
             navigate(`/search?search=${search}`);
         }
+        setSearch('');
     };
 
     return (
