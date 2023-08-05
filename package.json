@@ -13,6 +13,8 @@
         "@testing-library/user-event": "^13.5.0",
         "bootstrap": "^5.3.0",
         "classnames": "^2.3.2",
+        "firebase": "^10.1.0",
+        "gh-pages": "^5.0.0",
         "normalize.css": "^8.0.1",
         "react": "^18.2.0",
         "react-bootstrap": "^2.8.0",
@@ -28,7 +30,9 @@
         "start": "react-app-rewired start",
         "build": "react-app-rewired build",
         "test": "react-app-rewired test",
-        "eject": "react-app-rewired eject"
+        "eject": "react-app-rewired eject",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
         "extends": [
@@ -53,5 +57,6 @@
         "customize-cra": "^1.0.0",
         "react-app-rewired": "^2.2.1",
         "sass": "^1.64.0"
-    }
+    },
+    "homepage": "http://N-DK.github.io/movie-web"
 }

@@ -14,6 +14,7 @@ import { useNavigate } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 function Header() {
+    const navigate = useNavigate();
     const [show, setShow] = useState(false);
     const [search, setSearch] = useState('');
     const [showModal, setShowModal] = useState(false);
@@ -38,7 +39,7 @@ function Header() {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (search.trim() !== '') {
-            window.location.href = `/search?search=${search}`;
+            navigate(`/search?search=${search}`);
         }
     };
 
